@@ -33,10 +33,14 @@ cd continuous-integration
 docker build -t ci .
 ```
 
-3. Create a container from the Docker image using the follow command, again from the root of the project:
+3. Create a container from the Docker image using the follow command, again from the root of the project. Make sure to replace `<digitalocean-token>` with your DigitalOcean token.
 
 ```sh
-docker run -it --name ci --restart=unless-stopped ci
+docker run -it \
+    --name ci \
+    --restart=unless-stopped \
+    --env DIGITALOCEAN_TOKEN=<digitalocean-token> \
+    ci
 ```
 
 ## Usage
