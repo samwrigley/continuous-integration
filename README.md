@@ -27,10 +27,12 @@ git clone git@github.com:samwrigley/continuous-integration.git
 cd continuous-integration
 ```
 
-2. Build the `ci` Docker image from the `Dockerfile` by running the following command from the root the project:
+2. Build the `ci` Docker image from the `Dockerfile` by running the following command from the root the project. Make sure to replace `<ssh-email>` with your own email.
 
 ```sh
-docker build -t ci .
+docker build \
+    --build-arg SSH_EMAIL=<ssh-email> \
+    --tag ci .
 ```
 
 3. Create a container from the Docker image using the follow command, again from the root of the project. Make sure to replace `<digitalocean-token>` with your DigitalOcean token.
