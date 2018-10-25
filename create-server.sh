@@ -11,3 +11,5 @@ terraform apply \
 
 # Assign droplet IP address
 export IP=$(terraform output ip)
+
+echo "Server IP Address: ${IP}"
