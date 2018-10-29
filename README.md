@@ -55,8 +55,6 @@ docker exec -it ci /bin/sh \
     /etc/ansible/provision-server.sh
 ```
 
-When prompted, enter `yes` to create the server.
-
 Once the script has finished running, your Continuous Integration server is up and running at the IP address listed at the end of the `create-server.sh` script output 🚀:
 
 ```sh
