@@ -50,8 +50,12 @@ docker run -it \
 To create and provision your Continuous Integration server on DigitalOcean, simply run the `create-server.sh` and `provision-server.sh` scripts inside the `ci` container:
 
 ```sh
-docker exec -d ci create-server.sh && provision-server.sh
+docker exec -it ci /bin/sh \
+    /etc/terraform/create-server.sh \
+    /etc/ansible/provision-server.sh
 ```
+
+When prompted, enter `yes` to create the server.
 
 Once the script has finished running, your Continuous Integration server is up and running at the IP address listed at the end of the `create-server.sh` script output 🚀:
 
