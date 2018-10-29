@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Move to Terraform directory
 cd /etc/terraform
@@ -7,9 +7,7 @@ cd /etc/terraform
 terraform apply \
     -var "digitalocean_token=${DIGITALOCEAN_TOKEN}" \
     -var "public_key=/.ssh/id_rsa.pub" \
-    -var "private_key=/.ssh/id_rsa" \
+    -var "private_key=/.ssh/id_rsa"
 
-# Assign droplet IP address
+# Assign server IP address
 export IP=$(terraform output ip)
-
-echo "Server IP Address: ${IP}"
