@@ -56,7 +56,7 @@ docker exec -d ci create-server.sh && provision-server.sh
 Once the script has finished running, your Continuous Integration server is up and running at the IP address listed at the end of the `create-server.sh` script output 🚀:
 
 ```sh
-Server IP Address: xxx.xxx.xxx.xxx
+ip = xxx.xxx.xxx.xxx
 ```
 
 Please note that both the `create-server.sh` and `provision-server.sh` scripts only need to be run once, although no harm will come from running them multiple times. If you wish to run the scripts seperately, ensure `create-server.sh` is run first and finishes successfully before running `provision-server.sh`, otherwise there will be no server to provision.
