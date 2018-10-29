@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Move to Ansible directory
 cd /etc/ansible
