@@ -17,6 +17,10 @@ RUN mkdir /.ssh && \
 COPY ./terraform/ /etc/terraform/
 COPY ./ansible/ /etc/ansible/
 
+# Grant permissions
+RUN chmod +x /etc/terraform/create-server.sh \
+    /etc/ansible/provision-server.sh 
+
 # Initialise Terraform
 WORKDIR /etc/terraform/
 RUN terraform init
