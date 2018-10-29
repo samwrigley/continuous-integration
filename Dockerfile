@@ -14,6 +14,7 @@ RUN apk add --no-cache \
 RUN mkdir /.ssh && \
     ssh-keygen -t rsa -b 4096 -C $SSH_EMAIL -f /.ssh/id_rsa -N ''
 
+# Copy all configuration files into container
 COPY ./terraform/ /etc/terraform/
 COPY ./ansible/ /etc/ansible/
 
