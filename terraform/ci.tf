@@ -24,7 +24,8 @@ resource "digitalocean_droplet" "ci" {
             "sudo pip install docker"
         ]
     }
-    output "ip" {
-        value = "${digitalocean_droplet.ci.ipv4_address}"
-    }
+}
+
+output "ip" {
+    value = "${digitalocean_droplet.ci.ipv4_address}"
 }
