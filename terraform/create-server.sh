@@ -5,7 +5,7 @@ cd /etc/terraform
 
 # Run Terraform
 terraform apply \
-    -auto-approve
+    -auto-approve \
     -var "digitalocean_token=${DIGITALOCEAN_TOKEN}" \
     -var "public_key=/.ssh/id_rsa.pub" \
     -var "private_key=/.ssh/id_rsa"
