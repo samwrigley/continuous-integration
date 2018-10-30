@@ -45,16 +45,16 @@ docker run -it \
     ci
 ```
 
-4. To create and provision your Continuous Integration server on DigitalOcean, simply run the `server.sh` script inside the `ci` container:
+4. To create and provision your Continuous Integration server on DigitalOcean, simply run the `server.sh` script inside the `ci` container. Please note that the `server.sh` script only need to be run once, although no harm will come from running it multiple times.
 
 ```sh
 docker exec -it ci /bin/sh server.sh
 ```
 
-Once the script has finished running, your Continuous Integration server is up and running at the IP address listed at the end of the output 🚀:
+Once the script has finished running, your Continuous Integration server is up and running at the IP address listed in the output 🚀:
 
 ```sh
 ip = xxx.xxx.xxx.xxx
 ```
 
-Please note that the `server.sh` script only need to be run once, although no harm will come from running it multiple times.
+Jenkins is now up and running on your server at `<server-ip>:8080`. Before Jenkins is ready to use, you'll need to complete the 'Getting Started' steps. Simply follow the instructions at `<server-ip>:8080` to finish the set up process. Once completed, you can continue to access Jenkins from the same URL: `<server-ip>:8080`
