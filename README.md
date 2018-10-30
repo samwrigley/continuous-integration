@@ -45,9 +45,7 @@ docker run -it \
     ci
 ```
 
-## Usage
-
-To create and provision your Continuous Integration server on DigitalOcean, simply run the `server.sh` script inside the `ci` container:
+4. To create and provision your Continuous Integration server on DigitalOcean, simply run the `server.sh` script inside the `ci` container:
 
 ```sh
 docker exec -it ci /bin/sh server.sh
