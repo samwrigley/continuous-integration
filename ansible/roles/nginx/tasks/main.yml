@@ -1,0 +1,23 @@
+---
+  - name: Add Nginx Repository
+    apt_repository: repo='ppa:nginx/stable' state=present
+    register: ppainstalled
+
+  - name: Install Nginx
+    apt: pkg=nginx state=latest update_cache=true
+    when: ppainstalled is success
+    notify:
+      - Start Nginx
+
+  - name: Remove Default Nginx Config
+    file: dest=/etc/nginx/sites-enabled/default state=absent
+    notify:
+      - Reload Nginx
+
+  - name: Add Nginx Config
+    template: src=default.j2 dest=/etc/nginx/sites-available/{{ domain }} owner=root group=root
+
+  - name: Enable Nginx Config
+    file: src=/etc/nginx/sites-available/{{ domain }} dest=/etc/nginx/sites-enabled/{{ domain }} state=link
+    notify:
+      - Reload Nginx

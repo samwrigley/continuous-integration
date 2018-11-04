@@ -1,0 +1,34 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+        server_name *{{ domain }};
+
+        return 301 https://$server_name$request_uri;
+}
+
+server {
+        listen [::]:443 ssl;
+        listen 443 ssl;
+
+        server_name {{ domain }} www.{{ domain }};
+
+        # Logging
+        access_log /var/log/nginx/jenkins.access.log;
+        error_log /var/log/nginx/jenkins.error.log;
+
+        # SSL certificates
+        ssl_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/privkey.pem;
+
+        location / {
+                proxy_set_header   Host $host:$server_port;
+                proxy_set_header   X-Real-IP $remote_addr;
+                proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header   X-Forwarded-Proto $scheme;
+
+                proxy_pass         http://127.0.0.1:8080;
+                proxy_read_timeout 90s;
+                proxy_redirect     http://127.0.0.1:8080 https://{{ domain }};
+        }
+}
