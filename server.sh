@@ -32,7 +32,7 @@ printf "[ci]\n${IP}" > hosts
 
 ansible-playbook \
     --private-key=/.ssh/id_rsa \
-    docker.yml
+    ansible.yml
 
 echo 'Successfully provisioned server'
 
