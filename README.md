@@ -47,8 +47,16 @@ docker run -it \
 
 4. To create and provision your Continuous Integration server on DigitalOcean, simply run the `server.sh` script inside the `ci` container. Please note that the `server.sh` script only need to be run once, although no harm will come from running it multiple times.
 
+From outside the container:
+
 ```sh
 docker exec -it ci /bin/sh server.sh
+```
+
+From inside the container:
+
+```sh
+/server.sh
 ```
 
 Once the script has finished running, your Continuous Integration server is up and running at the IP address listed in the output 🚀:
