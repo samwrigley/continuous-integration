@@ -1,0 +1,23 @@
+---
+  - name: Add Certbot Repository
+    apt_repository: repo='ppa:certbot/certbot' state=present
+    register: repositoryinstalled
+
+  - name: Install Certbot
+    apt: pkg=python-certbot-nginx state=latest update_cache=true
+    when: repositoryinstalled is success
+    notify:
+      - Stop Nginx
+
+  - name: Install Certificates
+    shell: certbot --noninteractive --agree-tos --keep-until-expiring --email {{ email }} --nginx -d {{ domain }}
+    notify:
+      - Start Nginx
+
+  - name: Add Certbot Renewal Cron Job
+    cron:
+      name: Certbot Renewal
+      job: "certbot renew --quiet --no-self-upgrade"
+      hour: "3"
+      minute: "30"
+      user: "root"
