@@ -9,6 +9,17 @@
     notify:
       - Start Nginx
 
+  - name: Allow HTTPS Through Firewall
+    ufw:
+      rule: allow
+      name: Nginx Full
+
+  - name: Delete Redundant Nginx HTTP Rule
+    ufw:
+      rule: allow
+      name: Nginx HTTP
+      delete: yes
+
   - name: Remove Default Nginx Config
     file: dest=/etc/nginx/sites-enabled/default state=absent
     notify:
