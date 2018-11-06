@@ -59,7 +59,7 @@ From inside the container:
 /server.sh
 ```
 
-Once the script has finished running, your Continuous Integration server is up and running at the IP address listed in the output 🚀:
+Once the script has finished running, your Continuous Integration server is now up and running at the IP address listed in the output 🚀:
 
 ```sh
 ip = xxx.xxx.xxx.xxx
