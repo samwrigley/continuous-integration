@@ -57,4 +57,4 @@ Once the script has finished running, your Continuous Integration server is up a
 ip = xxx.xxx.xxx.xxx
 ```
 
-Jenkins is now up and running on your server at `<server-ip>`. Before Jenkins is ready to use, you'll need to complete the 'Getting Started' steps. Simply follow the instructions at `<server-ip>` to finish the set up process. Once completed, you can continue to access Jenkins from the same URL: `<server-ip>`
+Jenkins is now up and running on your server at `<server-ip>`. Before Jenkins is ready to use, you'll need to complete the 'Getting Started' steps. Simply follow the instructions at `<server-ip>` to finish the set up process. Once completed, you can continue to access Jenkins from the same URL.
