@@ -65,6 +65,8 @@ Once the script has finished running, your Continuous Integration server is now 
 ip = xxx.xxx.xxx.xxx
 ```
 
+## Usage
+
 Jenkins is now up and running on your server at `https://<server-ip>`. Before Jenkins is ready to use, you'll need to complete the 'Getting Started' steps. Simply follow the instructions at `https://<server-ip>` to finish the set up process. Once completed, you can continue to access Jenkins from the same URL.
 
 If you wish to use a custom domain name to access Jenkins rather than the server's IP address, simply update your DNS records and create an A record pointing `ci.example.com` to `<server-ip>`.
