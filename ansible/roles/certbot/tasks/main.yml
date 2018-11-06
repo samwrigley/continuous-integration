@@ -6,11 +6,19 @@
   - name: Install Certbot
     apt: pkg=python-certbot-nginx state=latest update_cache=true
     when: repositoryinstalled is success
-    notify:
-      - Stop Nginx
 
-  - name: Install Certificates
-    shell: certbot --noninteractive --agree-tos --keep-until-expiring --email {{ email }} --nginx -d {{ domain }}
+  - name: Check If SSL Certificate Exists
+    stat:
+      path: /etc/letsencrypt/live/{{ domain }}/fullchain.pem
+    register: certificate
+  
+  - name: Stop Nginx
+    service: name=nginx state=stopped
+    when: not certificate.stat.exists
+
+  - name: Install Certificate
+    shell: certbot --noninteractive --agree-tos --email {{ email }} --nginx -d {{ domain }}
+    when: not certificate.stat.exists
     notify:
       - Start Nginx
 
