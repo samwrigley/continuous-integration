@@ -3,6 +3,11 @@
     become: yes
     become_user: root
     become_method: sudo
+
+    vars:
+      - domain: ci.example.com
+      - email: hello@example.com
+
     roles:
       - nginx
       - docker
