@@ -1,5 +1,5 @@
 resource "digitalocean_ssh_key" "ci" {
-  name = "CI"
+  name = "CI Server"
   public_key = "${file(var.public_key)}"
 }
 
