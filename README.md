@@ -1,6 +1,6 @@
 # Continuous Integration Server
 
-Create and provision a Continuous Integration server on DigitalOcean using Docker, Terraform, Ansible, Nginx and Jenkins.
+Create and provision a Continuous Integration server on DigitalOcean using Docker, Terraform, Ansible, Nginx, LetsEncrypt and Jenkins.
 
 ## Prerequisites
 
