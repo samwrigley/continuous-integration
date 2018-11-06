@@ -6,15 +6,15 @@ Create and provision a Continuous Integration server on DigitalOcean using Docke
 
 You'll need the following things before you get started:
 
-### Docker
+#### Docker
 
 To install Docker, follow the installation guide: [https://docs.docker.com/install/](https://docs.docker.com/install/)
 
-### DigitalOcean account
+#### DigitalOcean account
 
 [Sign up](https://m.do.co/c/344de7bea76b) for a DigitalOcean account
 
-### DigitalOcean Personal Access Token
+#### DigitalOcean Personal Access Token
 
 Once you have a DigitalOcean account you can create a Personal Access Token by following this guide in their API docs: https://www.digitalocean.com/docs/api/create-personal-access-token/
 
