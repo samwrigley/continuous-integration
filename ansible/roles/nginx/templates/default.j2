@@ -17,10 +17,6 @@ server {
         access_log /var/log/nginx/jenkins.access.log;
         error_log /var/log/nginx/jenkins.error.log;
 
-        # SSL certificates
-        ssl_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/privkey.pem;
-
         location / {
                 proxy_set_header   Host $host:$server_port;
                 proxy_set_header   X-Real-IP $remote_addr;
