@@ -69,6 +69,10 @@ Jenkins is now up and running on your server at `https://<server-ip>`. Before Je
 
 If you wish to use a custom domain name to access Jenkins rather than the server's IP address, simply update your DNS records and create an A record pointing `ci.example.com` to `<server-ip>`.
 
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information about what has changed recently.
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
